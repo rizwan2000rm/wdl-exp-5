@@ -1,0 +1,363 @@
+*,
+*::before,
+*::after {
+  /* Bordex Boxing For Margins and Padding insdie the box rather than outside */
+  box-sizing: border-box;
+  padding: 0;
+}
+
+:root {
+  /* rem unit base */
+  font-size: 14px;
+  /* CSS Variables */
+  --primary-color: #f3eed9;
+  --body-color: #424242;
+  --dark-color1: #824936;
+  --dark-color2: #383838;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3125rem;
+  line-height: 1.6;
+  color: var(--body-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+  /* added for nav-toggle positioning */
+  position: relative;
+}
+
+.align-center {
+  align-items: center;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  margin-top: 0;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: var(--dark-color1);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  opacity: 0.6;
+}
+
+ul {
+  list-style: none;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+/* NAVBAR */
+
+header {
+  background: var(--body-color);
+  padding: 1em 0;
+  text-align: center;
+}
+
+.nav-toggle {
+  cursor: pointer;
+  border: 0;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--dark-color1);
+  color: var(--primary-color);
+  transition: opacity 250ms ease;
+
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+  opacity: 0.75;
+}
+
+.hamburger {
+  width: 50%;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  margin: 0 auto;
+  height: 3px;
+  background: var(--primary-color);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  width: 100%;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+.nav {
+  width: 100%;
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+}
+
+.nav--visible {
+  visibility: visible;
+  height: auto;
+  position: relative;
+}
+
+.nav__list {
+  margin-top: 2em;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__item {
+  font-size: 1.3125rem;
+}
+
+.nav__brand {
+  color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.nav__link {
+  color: var(--primary-color);
+  /* font-size: 1rem; */
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 1em;
+}
+
+.nav__link--button {
+  background: var(--dark-color1);
+  color: var(--primary-color);
+  padding: 0.25em 1em;
+  border-radius: 10em;
+}
+
+.nav__link:hover {
+  opacity: 0.75;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-size: 2rem;
+  align-self: center;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #212121;
+  transition: background 1000ms;
+  z-index: 2;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/* INTRO */
+
+.intro {
+  background: var(--primary-color);
+  text-align: center;
+  color: var(--dark-color1);
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+}
+
+.intro__text {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 1.125rem;
+  color: var(--dark-color2);
+  margin: 0 0 0.25em;
+}
+
+.intro__title {
+  font-size: 3rem;
+}
+
+/* MAIN */
+
+.main {
+  margin-top: 3em;
+}
+
+.main .section-title {
+  font-size: 2.25rem;
+  color: var(--dark-color2);
+}
+
+.sidebar {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--primary-color);
+  background-color: var(--dark-color1);
+}
+
+.sidebar h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.box + .box {
+  margin-top: 2em;
+}
+
+/* SECTIONS */
+
+section {
+  padding: 4em 0;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  color: #f3eed9;
+}
+
+.section-title--dark {
+  color: #824936;
+}
+
+.section-three {
+  background-color: #222c2a;
+  color: #fff;
+}
+
+.section-four {
+  background-color: #824936;
+  color: #fff;
+}
+
+/* FOOTER */
+
+.footer {
+  background: var(--primary-color);
+  text-align: center;
+  color: var(--dark-color1);
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+}
+
+.footer .container {
+  align-items: start;
+}
+
+.footer a > i {
+  color: var(--dark-color1);
+  margin-right: 0.5em;
+}
+
+.footer a > i:hover,
+.footer a > i:focus {
+  color: var(--dark-color2);
+}
+
+.im + .im {
+  margin-left: 3em;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 800px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    visibility: visible;
+    display: flex;
+    align-content: center;
+  }
+
+  .nav__list {
+    display: flex;
+    margin: 0;
+  }
+
+  .nav__item {
+    margin: 0;
+  }
+
+  .nav__link {
+    margin: 0;
+  }
+
+  .nav__item + .nav__item {
+    margin-left: 1em;
+  }
+
+  .nav__list--primary {
+    margin: 0 auto;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .primary-content {
+    width: 50%;
+  }
+
+  .sidebar {
+    width: 40%;
+  }
+
+  .col {
+    width: 100%;
+  }
+
+  .col + .col {
+    margin-left: 5em;
+  }
+
+  .intro__title {
+    font-size: 3.75rem;
+  }
+}
